@@ -37,7 +37,11 @@ Data is sourced from [AlQuran Cloud](https://alquran.cloud/api) and cached serve
         },
         servers: [
             {
-                url: process.env.API_URL || 'https://quran-web-backend-rashaduldev.vercel.app',
+                url: 'https://quran-web-backend-rashaduldev.vercel.app',
+                description: 'Production Server',
+            },
+            {
+                url: 'http://localhost:5000',
                 description: 'Development Server',
             },
         ],
