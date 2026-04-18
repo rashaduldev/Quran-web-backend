@@ -1,0 +1,1 @@
+{"version":3,"file":"surah.route.js","sourceRoot":"","sources":["../../src/routes/surah.route.ts"],"names":[],"mappings":";;AAAA,qCAAiC;AACjC,sEAIyC;AAEzC,MAAM,MAAM,GAAU,IAAA,gBAAM,GAAE,CAAC;AAE/B,MAAM,CAAC,GAAG,CAAC,GAAG,EAAE,+BAAY,CAAC,CAAC;AAC9B,MAAM,CAAC,GAAG,CAAC,MAAM,EAAE,+BAAY,CAAC,CAAC;AACjC,MAAM,CAAC,GAAG,CAAC,YAAY,EAAE,gCAAa,CAAC,CAAC;AAExC,kBAAe,MAAM,CAAC"}

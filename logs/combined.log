@@ -12,3 +12,7 @@
 [2026-04-18 13:31:42] info: Fetching surah 8 from API
 [2026-04-18 13:31:42] info: Fetching surah 9 from API
 [2026-04-18 13:31:42] info: Fetching surah 10 from API
+[2026-04-18 13:50:29] info: Quran API running on http://localhost:5000
+[2026-04-18 13:50:29] info: Swagger UI: http://localhost:5000/api-docs
+[2026-04-18 13:50:29] info: Environment: development
+[2026-04-18 13:50:56] info: SIGINT signal received. Shutting down gracefully...
