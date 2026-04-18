@@ -1,3 +1,14 @@
 [2026-04-18 13:27:07] info: Quran API running on http://localhost:5000
 [2026-04-18 13:27:07] info: Swagger UI: http://localhost:5000/api-docs
 [2026-04-18 13:27:07] info: Environment: development
+[2026-04-18 13:31:40] info: Searching ayahs for: "al"
+[2026-04-18 13:31:42] info: Fetching surah 1 from API
+[2026-04-18 13:31:42] info: Fetching surah 2 from API
+[2026-04-18 13:31:42] info: Fetching surah 3 from API
+[2026-04-18 13:31:42] info: Fetching surah 4 from API
+[2026-04-18 13:31:42] info: Fetching surah 5 from API
+[2026-04-18 13:31:42] info: Fetching surah 6 from API
+[2026-04-18 13:31:42] info: Fetching surah 7 from API
+[2026-04-18 13:31:42] info: Fetching surah 8 from API
+[2026-04-18 13:31:42] info: Fetching surah 9 from API
+[2026-04-18 13:31:42] info: Fetching surah 10 from API
