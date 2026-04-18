@@ -4,6 +4,7 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
 };
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.swaggerSpec = void 0;
+const path_1 = __importDefault(require("path"));
 const swagger_jsdoc_1 = __importDefault(require("swagger-jsdoc"));
 const options = {
     definition: {
@@ -136,17 +137,13 @@ Data is sourced from [AlQuran Cloud](https://alquran.cloud/api) and cached serve
         },
     },
     apis: [
-        "./src/routes/*.ts",
-        "./src/controllers/*.ts",
-        "./src/index.ts",
-        "./src/app.ts",
-        "./dist/routes/*.js",
-        "./dist/controllers/*.js",
-        "./dist/index.js",
-        "./dist/app.js",
-        "./*.js",
-        "./routes/*.js",
-        "./controllers/*.js",
+        path_1.default.resolve(process.cwd(), 'src/routes/*.ts'),
+        path_1.default.resolve(process.cwd(), 'src/controllers/*.ts'),
+        path_1.default.resolve(process.cwd(), 'dist/routes/*.js'),
+        path_1.default.resolve(process.cwd(), 'dist/controllers/*.js'),
+        './routes/*.js',
+        './controllers/*.js',
+        './*.js'
     ],
 };
 exports.swaggerSpec = (0, swagger_jsdoc_1.default)(options);

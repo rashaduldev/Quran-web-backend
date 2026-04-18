@@ -1,3 +1,4 @@
+import path from "path";
 import swaggerJsdoc from "swagger-jsdoc";
 
 const options: swaggerJsdoc.Options = {
@@ -132,19 +133,15 @@ Data is sourced from [AlQuran Cloud](https://alquran.cloud/api) and cached serve
     },
   },
   apis: [
-    "./src/routes/*.ts",
-    "./src/controllers/*.ts",
-    "./src/index.ts",
-    "./src/app.ts",
-
-    "./dist/routes/*.js",
-    "./dist/controllers/*.js",
-    "./dist/index.js",
-    "./dist/app.js",
-
-    "./*.js",
-    "./routes/*.js",
-    "./controllers/*.js",
+    path.resolve(process.cwd(), 'src/routes/*.ts'),
+    path.resolve(process.cwd(), 'src/controllers/*.ts'),
+    
+    path.resolve(process.cwd(), 'dist/routes/*.js'),
+    path.resolve(process.cwd(), 'dist/controllers/*.js'),
+    
+    './routes/*.js',
+    './controllers/*.js',
+    './*.js'
   ],
 };
 

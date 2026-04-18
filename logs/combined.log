@@ -250,3 +250,27 @@
 [2026-04-18 16:03:19] info: Swagger UI: http://localhost:5000/api-docs
 [2026-04-18 16:03:19] info: Environment: development
 [2026-04-18 16:05:58] info: SIGTERM signal received. Shutting down gracefully...
+[2026-04-18 16:07:46] info: Quran API running on http://localhost:5000
+[2026-04-18 16:07:46] info: Swagger UI: http://localhost:5000/api-docs
+[2026-04-18 16:07:46] info: Environment: development
+[2026-04-18 18:52:43] info: Quran API running on http://localhost:5000
+[2026-04-18 18:52:43] info: Swagger UI: http://localhost:5000/api-docs
+[2026-04-18 18:52:43] info: Environment: development
+[2026-04-18 18:52:54] info: SIGINT signal received. Shutting down gracefully...
+[2026-04-18 18:53:03] info: Quran API running on http://localhost:5000
+[2026-04-18 18:53:03] info: Swagger UI: http://localhost:5000/api-docs
+[2026-04-18 18:53:03] info: Environment: development
+[2026-04-18 18:55:45] info: SIGINT signal received. Shutting down gracefully...
+[2026-04-18 18:56:25] info: Quran API running on http://localhost:5000
+[2026-04-18 18:56:25] info: Swagger UI: http://localhost:5000/api-docs
+[2026-04-18 18:56:25] info: Environment: development
+[2026-04-18 18:56:26] info: SIGTERM signal received. Shutting down gracefully...
+[2026-04-18 18:56:30] info: Quran API running on http://localhost:5000
+[2026-04-18 18:56:30] info: Swagger UI: http://localhost:5000/api-docs
+[2026-04-18 18:56:30] info: Environment: development
+[2026-04-18 18:56:35] info: SIGINT signal received. Shutting down gracefully...
+[2026-04-18 18:56:47] info: Quran API running on http://localhost:5000
+[2026-04-18 18:56:47] info: Swagger UI: http://localhost:5000/api-docs
+[2026-04-18 18:56:47] info: Environment: development
+[2026-04-18 18:58:47] info: SIGINT signal received. Shutting down gracefully...
+[2026-04-18 18:58:48] info: SIGINT signal received. Shutting down gracefully...
