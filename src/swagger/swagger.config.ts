@@ -1,12 +1,11 @@
-import path from 'path';
-import swaggerJsdoc from 'swagger-jsdoc';
+import swaggerJsdoc from "swagger-jsdoc";
 
 const options: swaggerJsdoc.Options = {
   definition: {
-    openapi: '3.0.0',
+    openapi: "3.0.0",
     info: {
-      title: 'Quran API',
-      version: '1.0.0',
+      title: "Quran API",
+      version: "1.0.0",
       description: `A comprehensive REST API providing access to the Holy Quran with Arabic text and English translations.
 
 ## Features
@@ -20,122 +19,132 @@ const options: swaggerJsdoc.Options = {
 Data is sourced from [AlQuran Cloud](https://alquran.cloud/api) and cached server-side for 24 hours.
       `,
       contact: {
-        name: 'Quran API Support',
-        url: 'https://github.com/rashaduldev/Quran-web-backend',
+        name: "Quran API Support",
+        url: "https://github.com/rashaduldev/Quran-web-backend",
       },
       license: {
-        name: 'MIT',
-        url: 'https://opensource.org/licenses/MIT',
+        name: "MIT",
+        url: "https://opensource.org/licenses/MIT",
       },
     },
     servers: [
       {
-        url: 'https://quran-web-backend-rashaduldev.vercel.app',
-        description: 'Production Server',
+        url: "https://quran-web-backend-rashaduldev.vercel.app",
+        description: "Production Server",
       },
       {
-        url: 'http://localhost:5000',
-        description: 'Development Server',
+        url: "http://localhost:5000",
+        description: "Development Server",
       },
     ],
     tags: [
       {
-        name: 'Surahs',
-        description: 'Surah (chapter) operations',
+        name: "Surahs",
+        description: "Surah (chapter) operations",
       },
       {
-        name: 'Search',
-        description: 'Search operations',
+        name: "Search",
+        description: "Search operations",
       },
       {
-        name: 'Health',
-        description: 'API health and status',
+        name: "Health",
+        description: "API health and status",
       },
     ],
     components: {
       schemas: {
         Surah: {
-          type: 'object',
+          type: "object",
           properties: {
-            number: { type: 'integer', example: 1 },
-            name: { type: 'string', example: 'سُورَةُ ٱلْفَاتِحَةِ' },
-            englishName: { type: 'string', example: 'Al-Faatiha' },
+            number: { type: "integer", example: 1 },
+            name: { type: "string", example: "سُورَةُ ٱلْفَاتِحَةِ" },
+            englishName: { type: "string", example: "Al-Faatiha" },
             englishNameTranslation: {
-              type: 'string',
-              example: 'The Opening',
+              type: "string",
+              example: "The Opening",
             },
-            numberOfAyahs: { type: 'integer', example: 7 },
+            numberOfAyahs: { type: "integer", example: 7 },
             revelationType: {
-              type: 'string',
-              enum: ['Meccan', 'Medinan'],
-              example: 'Meccan',
+              type: "string",
+              enum: ["Meccan", "Medinan"],
+              example: "Meccan",
             },
           },
         },
         Ayah: {
-          type: 'object',
+          type: "object",
           properties: {
-            number: { type: 'integer', example: 1 },
+            number: { type: "integer", example: 1 },
             text: {
-              type: 'string',
-              example: 'بِسۡمِ ٱللَّهِ ٱلرَّحۡمَٰنِ ٱلرَّحِيمِ',
+              type: "string",
+              example: "بِسۡمِ ٱللَّهِ ٱلرَّحۡمَٰنِ ٱلرَّحِيمِ",
             },
-            numberInSurah: { type: 'integer', example: 1 },
-            juz: { type: 'integer', example: 1 },
-            page: { type: 'integer', example: 1 },
+            numberInSurah: { type: "integer", example: 1 },
+            juz: { type: "integer", example: 1 },
+            page: { type: "integer", example: 1 },
             translation: {
-              type: 'string',
-              example: 'In the name of God, the Most Gracious, the Dispenser of Grace',
+              type: "string",
+              example:
+                "In the name of God, the Most Gracious, the Dispenser of Grace",
             },
           },
         },
         SurahDetail: {
           allOf: [
-            { $ref: '#/components/schemas/Surah' },
+            { $ref: "#/components/schemas/Surah" },
             {
-              type: 'object',
+              type: "object",
               properties: {
                 ayahs: {
-                  type: 'array',
-                  items: { $ref: '#/components/schemas/Ayah' },
+                  type: "array",
+                  items: { $ref: "#/components/schemas/Ayah" },
                 },
               },
             },
           ],
         },
         SearchResult: {
-          type: 'object',
+          type: "object",
           properties: {
-            surahNumber: { type: 'integer', example: 2 },
-            surahName: { type: 'string', example: 'سُورَةُ البَقَرَةِ' },
-            surahEnglishName: { type: 'string', example: 'Al-Baqara' },
-            ayahNumber: { type: 'integer', example: 255 },
-            ayahNumberInSurah: { type: 'integer', example: 255 },
-            arabicText: { type: 'string', example: 'ٱللَّهُ لَآ إِلَٰهَ إِلَّا هُوَ...' },
-            translation: { type: 'string', example: 'God - there is no deity save Him...' },
+            surahNumber: { type: "integer", example: 2 },
+            surahName: { type: "string", example: "سُورَةُ البَقَرَةِ" },
+            surahEnglishName: { type: "string", example: "Al-Baqara" },
+            ayahNumber: { type: "integer", example: 255 },
+            ayahNumberInSurah: { type: "integer", example: 255 },
+            arabicText: {
+              type: "string",
+              example: "ٱللَّهُ لَآ إِلَٰهَ إِلَّا هُوَ...",
+            },
+            translation: {
+              type: "string",
+              example: "God - there is no deity save Him...",
+            },
           },
         },
         Error: {
-          type: 'object',
+          type: "object",
           properties: {
-            success: { type: 'boolean', example: false },
-            error: { type: 'string', example: 'Error message' },
+            success: { type: "boolean", example: false },
+            error: { type: "string", example: "Error message" },
           },
         },
       },
     },
   },
   apis: [
-    path.join(process.cwd(), 'src/routes/*.ts'),
-    path.join(process.cwd(), 'src/controllers/*.ts'),
-    path.join(process.cwd(), 'src/index.ts'),
-    
-    path.join(process.cwd(), 'dist/routes/*.js'),
-    path.join(process.cwd(), 'dist/controllers/*.js'),
-    path.join(process.cwd(), 'dist/index.js'),
-    
-    './routes/*.js',
-    './controllers/*.js'
+    "./src/routes/*.ts",
+    "./src/controllers/*.ts",
+    "./src/index.ts",
+    "./src/app.ts",
+
+    "./dist/routes/*.js",
+    "./dist/controllers/*.js",
+    "./dist/index.js",
+    "./dist/app.js",
+
+    "./*.js",
+    "./routes/*.js",
+    "./controllers/*.js",
   ],
 };
 
