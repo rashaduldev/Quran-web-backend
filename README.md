@@ -54,9 +54,9 @@ npm install
 
 # 3. Start development server (with hot reload)
 npm run dev
-# → API:       http://localhost:5000
-# → Swagger:   http://localhost:5000/api-docs
-# → Health:    http://localhost:5000/health
+# → API:       https://quran-web-backend-rashaduldev.vercel.app
+# → Swagger:   https://quran-web-backend-rashaduldev.vercel.app/api-docs
+# → Health:    https://quran-web-backend-rashaduldev.vercel.app/health
 ```
 
 ### Production Build
