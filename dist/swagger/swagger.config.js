@@ -132,7 +132,12 @@ Data is sourced from [AlQuran Cloud](https://alquran.cloud/api) and cached serve
             },
         },
     },
-    apis: ['./src/controllers/*.ts', './src/routes/*.ts'],
+    apis: [
+        './src/routes/*.ts',
+        './dist/routes/*.js',
+        './src/app.ts',
+        './dist/app.js'
+    ],
 };
 exports.swaggerSpec = (0, swagger_jsdoc_1.default)(options);
 //# sourceMappingURL=swagger.config.js.map

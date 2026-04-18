@@ -55,17 +55,18 @@ app.use('/api-docs', swagger_ui_express_1.default.serve, swagger_ui_express_1.de
     explorer: true,
     customCss: `
       .swagger-ui .topbar { background: linear-gradient(135deg, #1a3a2a, #2d6a4f); }
-      .swagger-ui .topbar-wrapper img { content: url('data:image/svg+xml,...'); }
       .swagger-ui .info .title { color: #2d6a4f; }
-      .swagger-ui .btn.execute { background: #2d6a4f; }
-      .swagger-ui .opblock.opblock-get .opblock-summary-method { background: #2d6a4f; }
     `,
+    customCssUrl: "https://cdnjs.cloudflare.com/ajax/libs/swagger-ui/4.15.5/swagger-ui.min.css",
+    customJs: [
+        "https://cdnjs.cloudflare.com/ajax/libs/swagger-ui/4.15.5/swagger-ui-bundle.js",
+        "https://cdnjs.cloudflare.com/ajax/libs/swagger-ui/4.15.5/swagger-ui-standalone-preset.js"
+    ],
     customSiteTitle: 'Quran API Documentation',
     swaggerOptions: {
         persistAuthorization: true,
         displayRequestDuration: true,
         filter: true,
-        supportedSubmitMethods: ['get', 'post', 'put', 'delete', 'patch'],
     },
 }));
 app.get('/api-docs.json', (_req, res) => {

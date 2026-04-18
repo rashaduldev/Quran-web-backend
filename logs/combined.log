@@ -89,3 +89,31 @@
 [2026-04-18 15:20:57] info: Quran API running on http://localhost:5000
 [2026-04-18 15:20:57] info: Swagger UI: http://localhost:5000/api-docs
 [2026-04-18 15:20:57] info: Environment: development
+[2026-04-18 15:27:53] info: SIGTERM signal received. Shutting down gracefully...
+[2026-04-18 15:27:56] info: Quran API running on http://localhost:5000
+[2026-04-18 15:27:56] info: Swagger UI: http://localhost:5000/api-docs
+[2026-04-18 15:27:56] info: Environment: development
+[2026-04-18 15:28:09] info: SIGTERM signal received. Shutting down gracefully...
+[2026-04-18 15:28:10] info: Quran API running on http://localhost:5000
+[2026-04-18 15:28:10] info: Swagger UI: http://localhost:5000/api-docs
+[2026-04-18 15:28:10] info: Environment: development
+[2026-04-18 15:28:47] info: SIGTERM signal received. Shutting down gracefully...
+[2026-04-18 15:28:49] info: Quran API running on http://localhost:5000
+[2026-04-18 15:28:49] info: Swagger UI: http://localhost:5000/api-docs
+[2026-04-18 15:28:49] info: Environment: development
+[2026-04-18 15:28:49] info: SIGTERM signal received. Shutting down gracefully...
+[2026-04-18 15:28:50] info: Quran API running on http://localhost:5000
+[2026-04-18 15:28:50] info: Swagger UI: http://localhost:5000/api-docs
+[2026-04-18 15:28:50] info: Environment: development
+[2026-04-18 15:28:50] info: SIGTERM signal received. Shutting down gracefully...
+[2026-04-18 15:28:53] info: Quran API running on http://localhost:5000
+[2026-04-18 15:28:53] info: Swagger UI: http://localhost:5000/api-docs
+[2026-04-18 15:28:53] info: Environment: development
+[2026-04-18 15:28:57] info: SIGTERM signal received. Shutting down gracefully...
+[2026-04-18 15:28:59] info: Quran API running on http://localhost:5000
+[2026-04-18 15:28:59] info: Swagger UI: http://localhost:5000/api-docs
+[2026-04-18 15:28:59] info: Environment: development
+[2026-04-18 15:29:01] info: SIGTERM signal received. Shutting down gracefully...
+[2026-04-18 15:29:03] info: Quran API running on http://localhost:5000
+[2026-04-18 15:29:03] info: Swagger UI: http://localhost:5000/api-docs
+[2026-04-18 15:29:03] info: Environment: development
