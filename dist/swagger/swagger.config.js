@@ -137,13 +137,15 @@ Data is sourced from [AlQuran Cloud](https://alquran.cloud/api) and cached serve
         },
     },
     apis: [
-        path_1.default.resolve(process.cwd(), 'src/routes/*.ts'),
-        path_1.default.resolve(process.cwd(), 'src/controllers/*.ts'),
-        path_1.default.resolve(process.cwd(), 'dist/routes/*.js'),
-        path_1.default.resolve(process.cwd(), 'dist/controllers/*.js'),
-        './routes/*.js',
-        './controllers/*.js',
-        './*.js'
+        path_1.default.join(process.cwd(), 'src/routes/*.ts'),
+        path_1.default.join(process.cwd(), 'src/controllers/*.ts'),
+        path_1.default.join(process.cwd(), 'src/index.ts'),
+        path_1.default.join(process.cwd(), 'dist/routes/*.js'),
+        path_1.default.join(process.cwd(), 'dist/controllers/*.js'),
+        path_1.default.join(process.cwd(), 'dist/index.js'),
+        './dist/routes/*.js',
+        './dist/controllers/*.js',
+        './dist/index.js'
     ],
 };
 exports.swaggerSpec = (0, swagger_jsdoc_1.default)(options);

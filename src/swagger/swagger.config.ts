@@ -133,15 +133,17 @@ Data is sourced from [AlQuran Cloud](https://alquran.cloud/api) and cached serve
     },
   },
   apis: [
-    path.resolve(process.cwd(), 'src/routes/*.ts'),
-    path.resolve(process.cwd(), 'src/controllers/*.ts'),
-    
-    path.resolve(process.cwd(), 'dist/routes/*.js'),
-    path.resolve(process.cwd(), 'dist/controllers/*.js'),
-    
-    './routes/*.js',
-    './controllers/*.js',
-    './*.js'
+    path.join(process.cwd(), 'src/routes/*.ts'),
+    path.join(process.cwd(), 'src/controllers/*.ts'),
+    path.join(process.cwd(), 'src/index.ts'),
+
+    path.join(process.cwd(), 'dist/routes/*.js'),
+    path.join(process.cwd(), 'dist/controllers/*.js'),
+    path.join(process.cwd(), 'dist/index.js'),
+
+    './dist/routes/*.js',
+    './dist/controllers/*.js',
+    './dist/index.js'
   ],
 };
 
