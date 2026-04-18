@@ -43,6 +43,29 @@ const surahIdSchema = zod_1.z.object({
     id: zod_1.z.string().regex(/^\d+$/, 'ID must be a number').transform(Number),
 });
 const surahIdRangeSchema = surahIdSchema.refine((data) => data.id >= 1 && data.id <= 114, { message: 'Surah ID must be between 1 and 114', path: ['id'] });
+/**
+ * @swagger
+ * /api/surahs:
+ *   get:
+ *     summary: Get all 114 surahs
+ *     tags: [Surahs]
+ *     responses:
+ *       200:
+ *         description: List of all surahs
+ *         content:
+ *           application/json:
+ *             schema:
+ *               type: object
+ *               properties:
+ *                 success:
+ *                   type: boolean
+ *                 data:
+ *                   type: array
+ *                   items:
+ *                     $ref: '#/components/schemas/Surah'
+ *       500:
+ *         description: Server error
+ */
 async function getAllSurahs(_req, res, next) {
     try {
         const surahs = await quranService.getAllSurahs();
@@ -52,6 +75,38 @@ async function getAllSurahs(_req, res, next) {
         next(error);
     }
 }
+/**
+ * @swagger
+ * /api/surahs/{id}:
+ *   get:
+ *     summary: Get a surah by number with all ayahs and translations
+ *     tags: [Surahs]
+ *     parameters:
+ *       - in: path
+ *         name: id
+ *         required: true
+ *         schema:
+ *           type: integer
+ *           minimum: 1
+ *           maximum: 114
+ *         description: Surah number (1-114)
+ *     responses:
+ *       200:
+ *         description: Surah detail with ayahs
+ *         content:
+ *           application/json:
+ *             schema:
+ *               type: object
+ *               properties:
+ *                 success:
+ *                   type: boolean
+ *                 data:
+ *                   $ref: '#/components/schemas/SurahDetail'
+ *       400:
+ *         description: Invalid surah ID
+ *       404:
+ *         description: Surah not found
+ */
 async function getSurahById(req, res, next) {
     try {
         const parsed = surahIdRangeSchema.safeParse(req.params);
@@ -66,6 +121,24 @@ async function getSurahById(req, res, next) {
         next(error);
     }
 }
+/**
+ * @swagger
+ * /api/surahs/{id}/ayahs:
+ *   get:
+ *     summary: Get all ayahs of a specific surah
+ *     tags: [Surahs]
+ *     parameters:
+ *       - in: path
+ *         name: id
+ *         required: true
+ *         schema:
+ *           type: integer
+ *           minimum: 1
+ *           maximum: 114
+ *     responses:
+ *       200:
+ *         description: List of ayahs
+ */
 async function getSurahAyahs(req, res, next) {
     try {
         const parsed = surahIdRangeSchema.safeParse(req.params);

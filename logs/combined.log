@@ -249,3 +249,4 @@
 [2026-04-18 16:03:19] info: Quran API running on http://localhost:5000
 [2026-04-18 16:03:19] info: Swagger UI: http://localhost:5000/api-docs
 [2026-04-18 16:03:19] info: Environment: development
+[2026-04-18 16:05:58] info: SIGTERM signal received. Shutting down gracefully...

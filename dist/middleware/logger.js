@@ -19,6 +19,7 @@ exports.logger = winston_1.default.createLogger({
         }),
     ],
 });
+// Jodi Production NA hoy, tobei shudhu File Transport add hobe
 if (!isProduction) {
     exports.logger.add(new winston_1.default.transports.File({
         filename: 'logs/error.log',

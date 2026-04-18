@@ -88,6 +88,7 @@ async function searchAyahs(query, page = 1, limit = 20) {
     if (!normalizedQuery || normalizedQuery.length < 2) {
         return { results: [], total: 0 };
     }
+    // Check search cache
     const cacheKey = `search_${normalizedQuery}_${page}_${limit}`;
     const cached = cache.get(cacheKey);
     if (cached)

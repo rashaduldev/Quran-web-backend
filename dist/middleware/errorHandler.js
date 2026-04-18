@@ -43,6 +43,7 @@ function globalErrorHandler(err, req, res, _next) {
             error: err.message,
         });
     }
+    // Axios errors from upstream API
     if (err.name === 'AxiosError') {
         return res.status(502).json({
             success: false,

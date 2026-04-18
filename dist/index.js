@@ -17,6 +17,7 @@ const logger_1 = require("./middleware/logger");
 const quran_service_1 = require("./services/quran.service");
 const app = (0, express_1.default)();
 const PORT = process.env.PORT || 5000;
+// Middleware
 app.use((0, cors_1.default)({
     origin: '*',
     methods: ['GET', 'POST', 'OPTIONS', 'PUT', 'DELETE'],
@@ -33,6 +34,7 @@ app.use((req, res, next) => {
         next();
     }
 });
+// Rate Limiting
 const apiLimiter = (0, express_rate_limit_1.default)({
     windowMs: 15 * 60 * 1000,
     max: 200,
@@ -51,6 +53,7 @@ app.use(express_1.default.urlencoded({ extended: true }));
 app.use((0, morgan_1.default)('combined', {
     stream: { write: (message) => logger_1.logger.http(message.trim()) },
 }));
+// Swagger UI Setup 
 app.use('/api-docs', swagger_ui_express_1.default.serve, swagger_ui_express_1.default.setup(swagger_config_1.swaggerSpec, {
     explorer: true,
     customCss: `
@@ -69,12 +72,25 @@ app.use('/api-docs', swagger_ui_express_1.default.serve, swagger_ui_express_1.de
         filter: true,
     },
 }));
+// Swagger JSON endpoint
 app.get('/api-docs.json', (_req, res) => {
     res.setHeader('Content-Type', 'application/json');
     res.send(swagger_config_1.swaggerSpec);
 });
+// API Routes 
 app.use('/api/surahs', apiLimiter, surah_route_1.default);
 app.use('/api/search', apiLimiter, searchLimiter, search_route_1.default);
+// Health & Status Routes
+/**
+ * @swagger
+ * /health:
+ *   get:
+ *     summary: Health check
+ *     tags: [Health]
+ *     responses:
+ *       200:
+ *         description: API is healthy
+ */
 app.get('/health', (_req, res) => {
     res.json({
         success: true,
@@ -84,23 +100,47 @@ app.get('/health', (_req, res) => {
         environment: process.env.NODE_ENV || 'development',
     });
 });
+/**
+ * @swagger
+ * /api/cache/stats:
+ *   get:
+ *     summary: Get cache statistics
+ *     tags: [Health]
+ *     responses:
+ *       200:
+ *         description: Cache stats
+ */
 app.get('/api/cache/stats', (_req, res) => {
     res.json({ success: true, data: (0, quran_service_1.getCacheStats)() });
 });
+/**
+ * @swagger
+ * /api/cache/clear:
+ *   delete:
+ *     summary: Clear all cached data
+ *     tags: [Health]
+ *     responses:
+ *       200:
+ *         description: Cache cleared
+ */
 app.delete('/api/cache/clear', (_req, res) => {
     (0, quran_service_1.clearCache)();
     res.json({ success: true, message: 'Cache cleared successfully' });
 });
+// Root redirect to docs
 app.get('/', (_req, res) => {
     res.redirect('/api-docs');
 });
+// Error Handling 
 app.use(errorHandler_1.notFoundHandler);
 app.use(errorHandler_1.globalErrorHandler);
+// Start Server
 const server = app.listen(PORT, () => {
     logger_1.logger.info(`Quran API running on http://localhost:${PORT}`);
     logger_1.logger.info(`Swagger UI: http://localhost:${PORT}/api-docs`);
     logger_1.logger.info(`Environment: ${process.env.NODE_ENV || 'development'}`);
 });
+// Graceful shutdown
 process.on('SIGTERM', () => {
     logger_1.logger.info('SIGTERM signal received. Shutting down gracefully...');
     server.close(() => {
