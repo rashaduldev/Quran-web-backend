@@ -4,6 +4,7 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
 };
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.swaggerSpec = void 0;
+const path_1 = __importDefault(require("path"));
 const swagger_jsdoc_1 = __importDefault(require("swagger-jsdoc"));
 const options = {
     definition: {
@@ -11,10 +12,7 @@ const options = {
         info: {
             title: 'Quran API',
             version: '1.0.0',
-            description: `
-# Quran REST API
-
-A comprehensive REST API providing access to the Holy Quran with Arabic text and English translations.
+            description: `A comprehensive REST API providing access to the Holy Quran with Arabic text and English translations.
 
 ## Features
 - All 114 Surahs with metadata
@@ -133,10 +131,12 @@ Data is sourced from [AlQuran Cloud](https://alquran.cloud/api) and cached serve
         },
     },
     apis: [
-        './src/routes/*.ts',
-        './dist/routes/*.js',
-        './src/app.ts',
-        './dist/app.js'
+        path_1.default.join(process.cwd(), 'src/routes/**/*.ts'),
+        path_1.default.join(process.cwd(), 'dist/routes/**/*.js'),
+        path_1.default.join(process.cwd(), 'src/controllers/**/*.ts'),
+        path_1.default.join(process.cwd(), 'dist/controllers/**/*.js'),
+        path_1.default.join(process.cwd(), 'src/app.ts'),
+        path_1.default.join(process.cwd(), 'dist/app.js'),
     ],
 };
 exports.swaggerSpec = (0, swagger_jsdoc_1.default)(options);
