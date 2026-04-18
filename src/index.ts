@@ -1,4 +1,4 @@
-import express from 'express';
+import express , {Express} from 'express';
 import cors from 'cors';
 import helmet from 'helmet';
 import compression from 'compression';
@@ -12,7 +12,7 @@ import { globalErrorHandler, notFoundHandler } from './middleware/errorHandler';
 import { logger } from './middleware/logger';
 import { getCacheStats, clearCache } from './services/quran.service';
 
-const app = express();
+const app:Express = express();
 const PORT = process.env.PORT || 5000;
 
 // Middleware

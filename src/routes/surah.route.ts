@@ -5,7 +5,7 @@ import {
   getSurahAyahs,
 } from '../controllers/surah.controller';
 
-const router = Router();
+const router:Router = Router();
 
 router.get('/', getAllSurahs);
 router.get('/:id', getSurahById);
